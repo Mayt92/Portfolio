@@ -37,55 +37,40 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <title>3D Model Viewer with Text</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: transparent; /* Fond transparent */
-    }
-    #container {
-      position: relative;
-      width: 100%;
-      height:400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    #background-text {
-      position: absolute;
-      font-size: 5rem; /* Taille encore plus grande */
-      font-weight: bold;
-      font-family: "Monaco", monospace;
-      color: #178582; /* Bleu transparent */
-      bottom: 40%; /* Descend le texte vers le bas */
-      z-index: 1;
-      pointer-events: none; /* Empêche d'interférer avec les interactions du modèle */
-    }
-    model-viewer {
-      width: 100%;
-      height: 100%;
-      z-index: 2; /* Place le modèle devant */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Assemblage SolidWorks en 3D</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
+        /* Style de la visionneuse */
+        model-viewer {
+            width: 80%;
+            height: 600px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div id="container">
-    <!-- Texte en arrière-plan -->
-    <div id="background-text"></div>
-    <!-- Modèle 3D -->
+
+    <h1>Visualisation 3D de mon Assemblage</h1>
+
     <model-viewer 
-      src="https://Mayt92.github.io/Portfolio/TK-ASS_TORTANK_V2.glb"
-      alt="Robot TK" 
-      camera-controls 
-      auto-rotate 
-      shadow-intensity="1" 
-      style="background-color: transparent;">
+        src="https://Mayt92.github.io/Portfolio/TK-ASS_TORTANK_V2.glb"
+        alt="Un assemblage 3D provenant de SolidWorks" 
+        auto-rotate 
+        camera-controls 
+        shadow-intensity="1" 
+        ar>
     </model-viewer>
+
+    <p>Utilisez la souris pour pivoter et la molette pour zoomer.</p>
+
+</body>
+</html>
   </div>
 </body>
 </html>
