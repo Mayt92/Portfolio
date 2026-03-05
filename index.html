@@ -1,40 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Modèle 3D Tortank</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: transparent; /* optionnel, si tu veux voir le fond de ton site derrière /
-    }
-    model-viewer {
-      width: 600px;
-      height: 600px;
-      background-color: transparent; / fond transparent du viewer */
-    }
-  </style>
-</head>
-<body>
-  <model-viewer
-    src="https://Mayt92.github.io/Portfolio/TK-ASS_TORTANK_V2.glb"
-    alt="Modèle 3D du robot marcheur"
-    auto-rotate
-    camera-controls
-    ar
-    background-color="transparent">
-  </model-viewer>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Assemblage SolidWorks en 3D</title>
@@ -52,8 +18,6 @@
 </head>
 <body>
 
-    <h1>Visualisation 3D de mon Assemblage</h1>
-
     <model-viewer 
         src="https://Mayt92.github.io/Portfolio/TK_nouveau.glb"
         alt="Un assemblage 3D provenant de SolidWorks" 
@@ -64,6 +28,54 @@
     </model-viewer>
 
     <p>Utilisez la souris pour pivoter et la molette pour zoomer.</p>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualiseur 3D</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        /* On retire les marges et on occupe tout l'écran */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #ffffff; /* Fond blanc pur */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        model-viewer {
+            width: 100vw;
+            height: 100vh;
+            outline: none;
+            /* Rendu de haute qualité */
+            --poster-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <model-viewer 
+        src="https://Mayt92.github.io/Portfolio/TK_nouveau.glb" 
+        alt="Assemblage SolidWorks TK_nouveau"
+        camera-controls 
+        auto-rotate 
+        shadow-intensity="1.5" 
+        shadow-softness="1"
+        exposure="1.2"
+        environment-image="neutral"
+        interpolation-decay="200"
+        interaction-prompt="none"
+        ar>
+    </model-viewer>
 
 </body>
 </html>
