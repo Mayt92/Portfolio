@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualiseur 3D Pro</title>
+    <title>Visualiseur 3D</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
+        /* On retire les marges et on occupe tout l'écran */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #ffffff;
+            background-color: #ffffff; /* Fond blanc pur */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,18 +23,8 @@
             width: 100vw;
             height: 100vh;
             outline: none;
-            /* Animation de transition */
+            /* Rendu de haute qualité */
             --poster-color: transparent;
-        }
-
-        /* Style optionnel pour un indicateur de chargement circulaire */
-        #lazy-load-poster {
-            position: absolute;
-            left: 0; right: 0; top: 0; bottom: 0;
-            background-image: url("TK_image.png"); /* REMPLACEZ PAR VOTRE IMAGE */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
         }
     </style>
 </head>
@@ -41,19 +32,16 @@
 
     <model-viewer 
         src="https://Mayt92.github.io/Portfolio/TK_nouveau.glb" 
-        poster="TK_image.png"
         alt="Assemblage SolidWorks TK_nouveau"
         camera-controls 
         auto-rotate 
         shadow-intensity="1.5" 
+        shadow-softness="1"
         exposure="1.2"
         environment-image="neutral"
-        reveal="auto"
-        loading="lazy"
+        interpolation-decay="200"
+        interaction-prompt="none"
         ar>
-        
-        <div slot="poster" id="lazy-load-poster"></div>
-        
     </model-viewer>
 
 </body>
